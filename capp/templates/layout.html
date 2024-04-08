@@ -38,6 +38,7 @@
       type="text/css"
       href="{{ url_for('static', filename='cursor.css') }}"
     />
+    
 
     <!-- To activate media queries in devices -->
     <meta
@@ -52,6 +53,9 @@
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
+
+    <!-- ChartsJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
     {% if title %}
     <title>{{ title }}</title>
@@ -70,6 +74,7 @@
             alt="Logo EcoPaths"
           />
         </a>
+        {% if current_user.is_authenticated %}
         <nav>
           <ul>
             <li>
@@ -84,10 +89,30 @@
               <a href="{{url_for('carbon_app.carbon_app_home')}}">Carbon App</a>
             </li>
             <li>
-              <a href="{{url_for('users.register')}}">Account</a>
+              <a href="{{url_for('users.user_profile')}}">My account</a>
             </li>
           </ul>
         </nav>
+        {% else %}
+        <nav>
+          <ul>
+            <li>
+              <a href="{{ url_for('home.home_home') }}">Home</a>
+            </li>
+            <li>
+              <a href="{{url_for('methodology.methodology_home')}}"
+                >Methodology</a
+              >
+            </li>
+            <li>
+              <a href="{{url_for('carbon_app.carbon_app_home')}}">Carbon App</a>
+            </li>
+            <li>
+              <a href="{{url_for('users.register')}}">Create account</a>
+            </li>
+          </ul>
+        </nav>
+        {% endif %}
       </div>
     </section>
 
@@ -97,7 +122,7 @@
       <div class="footer_back">
         <div class="footer_cta">
           <h2>Create your account now</h2>
-          <a href="#" class="cta">Register</a>
+          <a href="{{url_for('users.register')}}" class="cta">Register</a>
         </div>
 
         <div class="footer-content">

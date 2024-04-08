@@ -4,9 +4,6 @@
 <section class="register_section_css">
   <div class="container">
           <div class="box">
-
-          </div>
-          <div class="box">
               {% with messages = get_flashed_messages(with_categories=true) %}
                   {% if messages %}
                       {% for category, message in messages %}
@@ -19,7 +16,7 @@
               <form method="POST" action="">
                   {{ form.hidden_tag() }}
                       <fieldset class="form-group">
-                          <legend class="border-bottom mb-4">Log In</legend>
+                          <legend class="border-bottom mb-4">Log in</legend>
                           <div class="form-group">
                               {{ form.email.label(class="form-control-label") }}
                               {% if form.email.errors %}
@@ -53,18 +50,15 @@
                       </fieldset>
                       </br>
                       <div class="form-group">
-                          {{ form.submit(class="btn btn-outline-info") }}
+                          {{ form.submit(class="cta_form") }}
                       </div>
               </form>
               </br>
               <div class="border-top pt-3">
                   <small>
-                      Need An Account? <a class="ml-2" href="{{ url_for('users.register') }}">Register</a>
+                      Need an account? <a class="ml-2" href="{{ url_for('users.register') }}">Register</a>
                   </small>
               </div>
-
-          </div>
-          <div class="box">
 
           </div>
   </div>

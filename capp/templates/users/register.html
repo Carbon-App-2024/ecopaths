@@ -4,13 +4,10 @@
 <section class="register_section_css">
     <div class="container">
             <div class="box">
-
-            </div>
-            <div class="box">
                 <form method="POST" action="">
                     {{ form.hidden_tag() }}
                     <fieldset class="form-group">
-                        <legend class="border-bottom mb-4">Join Today</legend>
+                        <legend class="border-bottom mb-4">Join us now</legend>
                         <div class="form-group">
                             {{ form.username.label(class="form-control-label") }}
                             {% if form.username.errors %}
@@ -66,18 +63,15 @@
                     </fieldset>
                     </br>
                     <div class="form-group">
-                        {{ form.submit(class="btn btn-outline-info") }}
+                        {{ form.submit(class="cta_form") }}
                     </div>
                 </form>
                 </br>
                 <div class="border-top pt-3">
                     <small>
-                        Already Have An Account? <a class="ml-5" href="{{ url_for('users.login') }}">Sign In</a>
+                        Already have an account? <a class="ml-5" href="{{ url_for('users.login') }}">Sign in</a>
                     </small>
                 </div>
-
-            </div>
-            <div class="box">
 
             </div>
     </div>
